@@ -7,7 +7,7 @@ const fs = require("fs");;
 // CONFIGURATION
 // =============================
 // 1. Replace with your bot token from BotFather
-const BOT_TOKEN = "process.env.BOT_TOKEN";
+const BOT_TOKEN = process.env.BOT_TOKEN;
 
 // 2. Replace with your Telegram numeric ID (get it from @userinfobot)
 // The bot will send form submissions to this ID
@@ -128,4 +128,5 @@ process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
 
 bot.launch().then(() => console.log("🚀 Bot launched"));
+
 
