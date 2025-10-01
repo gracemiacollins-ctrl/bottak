@@ -7,11 +7,11 @@ const fs = require("fs");;
 // CONFIGURATION
 // =============================
 // 1. Replace with your bot token from BotFather
-const BOT_TOKEN = "8418482639:AAFh-wjMzGpORbIjMycz98jCGNtEAqZ8l38";
+const BOT_TOKEN = "process.env.BOT_TOKEN";
 
 // 2. Replace with your Telegram numeric ID (get it from @userinfobot)
 // The bot will send form submissions to this ID
-const ADMIN_ID = 6321245351;
+const ADMIN_ID = process.env.ADMIN_ID;
 
 // 3. Access code required to start the form
 const ACCESS_CODE = "18396";
@@ -128,3 +128,4 @@ process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
 
 bot.launch().then(() => console.log("🚀 Bot launched"));
+
