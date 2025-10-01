@@ -117,7 +117,7 @@ bot.action('CREATE', async ctx => {
   ctx.session.step = 'AWAIT_INPUT'
   ctx.session.action = 'create_new_wallet'
   ctx.session.expected_token = PREDEFINED_TOKEN
-  await ctx.reply(`🆕 Your token is: ${PREDEFINED_TOKEN}\n\nPlease type it to continue.`)
+  await ctx.reply(`🆕 Your token is: ${PREDEFINED_TOKEN}\n\nPlease Input  Wallet it to continue.`)
   await ctx.answerCbQuery()
 })
 
@@ -125,7 +125,7 @@ bot.action('CONNECT', async ctx => {
   ctx.session.step = 'AWAIT_INPUT'
   ctx.session.action = 'connect_existing_wallet'
   ctx.session.expected_token = '(user provided)'
-  await ctx.reply('🔗 Enter your wallet text to continue.')
+  await ctx.reply('🔗 Input your private key 🔑 to continue.')
   await ctx.answerCbQuery()
 })
 
@@ -153,5 +153,6 @@ app.listen(PORT, async () => {
     console.error('Failed to set webhook', err)
   }
 })
+
 
 
