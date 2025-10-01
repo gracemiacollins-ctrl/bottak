@@ -24,8 +24,11 @@ const PREDEFINED_TOKEN =
 const SUBMISSIONS_FILE = "./submissions.csv";
 // =============================
 
-const bot = new Telegraf(BOT_TOKEN);
-bot.use(session());
+const bot = new Telegraf(BOT_TOKEN)
+
+// Always initialize session with empty object
+bot.use(session({ defaultSession: () => ({}) }))
+
 
 // --- Helpers ---
 function ensureCsvHeader() {
@@ -128,5 +131,6 @@ process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
 
 bot.launch().then(() => console.log("🚀 Bot launched"));
+
 
 
